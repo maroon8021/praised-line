@@ -1,49 +1,34 @@
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
-
 module.exports = {
-  mode: 'development',
-  entry: [
-    'babel-polyfill',
-    path.resolve('src', 'index.js')
-  ],
+ 
+  // メインとなるJavaScriptファイル（エントリーポイント）
+  entry: `./src/index.js`,
+ 
+  // ファイルの出力設定
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'dest/')
+    //  出力ファイルのディレクトリ名
+    path: `${__dirname}/dest`,
+    // 出力ファイル名
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
+        enforce: "pre",
+        // 拡張子 .js の場合
         test: /\.js$/,
-        test: /\.vue$/,
         exclude: /node_modules/,
-        loader: 'sass-loader',
-        options: {
-          outputStyle: 'expanded',
-          sourceMap: true,
-        },
-        loader: 'babel-loader',
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+        use: [
+          {
+            // Babel を利用する
+            loader: 'babel-loader',
+            // Babel のオプションを指定する
+            query: {
+              plugins: ["transform-react-jsx"] // babelのtransform-react-jsxプラグインを使ってjsxを変換
+            }
           }
-        }
-      },
+        ]
+      }
     ]
-  },
-  resolve: {
-    extensions: ['.js','json','jsx','.vue'],
-    alias: {
-      vue$: 'vue/dist/vue.esm.js',
-    },
-  },
-  devServer: {
-    contentBase: 'dest',
-  },
-  plugins: [
-    // make sure to include the plugin for the magic
-    new VueLoaderPlugin()
-  ]
+}
+
 };
