@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 // コメントreducerのactionを取得
-import { load } from './comment'
+import { load } from '../comment'
 
 // connectのdecorator
 @connect(

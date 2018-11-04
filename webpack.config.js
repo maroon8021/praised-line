@@ -1,8 +1,8 @@
 module.exports = {
- 
+
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: `./src/index.js`,
- 
+
   // ファイルの出力設定
   output: {
     //  出力ファイルのディレクトリ名
@@ -23,7 +23,8 @@ module.exports = {
             loader: 'babel-loader',
             // Babel のオプションを指定する
             query: {
-              plugins: ["transform-react-jsx","babel-plugin-transform-decorators-legacy"] // babelのtransform-react-jsxプラグインを使ってjsxを変換
+							plugins: ["transform-react-jsx",
+							["@babel/plugin-proposal-decorators", { "legacy": true }]] // babelのtransform-react-jsxプラグインを使ってjsxを変換
             }
           }
         ]
