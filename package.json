@@ -4,17 +4,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config ./webpack.config.js --hot --host 0.0.0.0",
+    "dev": "webpack-dev-server --mode development --config ./webpack.config.js --hot --host 0.0.0.0",
     "build": "webpack --config ./webpack.config.js --env.production -p",
     "lint": "eslint \"src/**/*.js\"",
     "lint-fix": "eslint \"src/**/*.js\" --fix",
     "start": "webpack-dev-server --config ./webpack.config.js --env.production --host 0.0.0.0",
-    "dev-test" : "webpack --mode development"
+    "dev-test": "webpack --mode development"
   },
   "repository": "git@github.com:maroon8021/praised-line.git",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
     "axios": "^0.18.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
