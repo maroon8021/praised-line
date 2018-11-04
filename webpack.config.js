@@ -23,7 +23,7 @@ module.exports = {
             loader: 'babel-loader',
             // Babel のオプションを指定する
             query: {
-              plugins: ["transform-react-jsx"] // babelのtransform-react-jsxプラグインを使ってjsxを変換
+              plugins: ["transform-react-jsx","babel-plugin-transform-decorators-legacy"] // babelのtransform-react-jsxプラグインを使ってjsxを変換
             }
           }
         ]
