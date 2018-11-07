@@ -4,12 +4,17 @@ import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 // react-reduxのProviderコンポーネントを追加
 import { Provider } from 'react-redux'
+import client from 'axios'
+import thunk from 'redux-thunk'
+
 import App from './pages/App'
 // reducerを読み込み（後述）
 import reducer from './reducer'
 
-// storeを作成
-const store = createStore(reducer)
+// axiosをthunkの追加引数に加える
+const thunkWithClient = thunk.withExtraArgument(client)
+// redux-thunkをミドルウェアに適用
+const store = createStore(reducer, applyMiddleware(thunkWithClient))
 
 // Providerタグで囲うとApp内でstoreが利用可能になる
 ReactDOM.render(
