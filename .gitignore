@@ -3,3 +3,4 @@ build/
 temp/
 .ds_store
 dest/bundle.js
+dest/css/*

@@ -20,3 +20,16 @@ export const VisibilityFilters = {
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
+
+export const addFeed = content => ({
+	type: 'ADD_FEED',
+	id: content.id,
+	title: content.title,
+	userName: content.userName,
+	date: content.date,
+	text: content.text,
+})
+
+/*
+どのタイプで、何を渡すのか
+*/

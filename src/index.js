@@ -12,6 +12,8 @@ import rootReducer from './reducers' // Is this name anything okay?
 //import App from './pages/App'
 import App from './components/App'
 import reducer from './reducer'
+import { tempFeedData } from './temp';
+import { addFeed } from './actions';
 
 // axiosをthunkの追加引数に加える
 //const thunkWithClient = thunk.withExtraArgument(client)
@@ -27,3 +29,6 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 )
+
+store.dispatch(addFeed(tempFeedData))
+console.log(store.getState())
