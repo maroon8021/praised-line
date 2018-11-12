@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Feed = ({ contents }) => {
+const Feed = (contents) => {
 
 	return (
 		<div className="card article">
@@ -13,16 +14,32 @@ const Feed = ({ contents }) => {
 						<p className="title article-title">{contents.title}</p>
 						<p className="subtitle is-6 article-subtitle">
 							<a href="#">@{contents.userName}</a> {contents.date}
-            </p>
+						</p>
 					</div>
 				</div>
 				<div className="content article-body">
 					<p>{contents.text}</p>
 					<h3 className="has-text-centered">hoge</h3>
 				</div>
+				<div className="communication-buttons">
+				  <div className="like-button">
+					<a className="button is-white">Like</a>
+					</div>
+					<div className="comment-button">
+					<a className="button is-white">Comment</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	)
+}
+
+Feed.propTypes = {
+	id: PropTypes.number.isRequired, //can be fixed to string
+	title: PropTypes.string.isRequired,
+	userName: PropTypes.string.isRequired,
+	date: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
 }
 
 export default Feed

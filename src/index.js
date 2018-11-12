@@ -30,5 +30,10 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-store.dispatch(addFeed(tempFeedData))
+console.log(tempFeedData())
+console.log(store.getState())
+store.dispatch(addFeed(tempFeedData()))
+store.dispatch(addFeed(tempFeedData()))
+store.dispatch(addFeed(tempFeedData()))
+store.dispatch(addFeed(tempFeedData()))
 console.log(store.getState())
