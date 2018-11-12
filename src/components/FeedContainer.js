@@ -6,10 +6,14 @@ const FeedContainer = ({ feeds }) => {
 
   return (
     <div className="container">
+      <section className="articles">
+        <div className="column is-8 is-offset-2">
 		  {feeds.map(feed => (
 				<Feed key={feed.id} {...feed} />
         //<Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
       ))}
+        </div>
+      </section>
     </div>
   )
 }
