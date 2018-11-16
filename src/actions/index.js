@@ -27,7 +27,8 @@ export const addFeed = content => ({
 	title: content.title,
 	userName: content.userName,
 	date: content.date,
-	text: content.text,
+  text: content.text,
+  comments: content.comments
 })
 
 /*
