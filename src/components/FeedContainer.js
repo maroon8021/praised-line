@@ -25,7 +25,8 @@ FeedContainer.propTypes = {
       title: PropTypes.string.isRequired,
 			userName: PropTypes.string.isRequired,
 			date: PropTypes.string.isRequired,
-			text: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      comments: PropTypes.array
     }).isRequired
   ).isRequired
 }

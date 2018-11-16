@@ -8,7 +8,8 @@ const feeds = (state = [], action) => {
 					title: action.title,
 					userName: action.userName,
 					date: action.date,
-					text: action.text,
+          text: action.text,
+          comments: action.comments
         }
       ]
     default:

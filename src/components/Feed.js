@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Comment from './Comment'
 
 const Feed = (contents) => {
 
@@ -29,6 +30,11 @@ const Feed = (contents) => {
 					<a className="button is-white">Comment</a>
 					</div>
 				</div>
+				<div className="comment-area">
+				  {contents.comments.map(comment => (
+						<Comment key={comment.id} {...comment} />
+					))}
+				</div>
 			</div>
 		</div>
 	)
@@ -40,6 +46,7 @@ Feed.propTypes = {
 	userName: PropTypes.string.isRequired,
 	date: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
+	comments: PropTypes.array
 }
 
 export default Feed
