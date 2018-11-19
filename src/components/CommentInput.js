@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 const CommentInput = (contents) => {
 
 	return (
-		<div className="comment-input-area">
+		<div className="comment-input">
       <input className="input is-rounded" type="text" placeholder="Rounded input" />
+			<button className="button is-primary is-rounded">Rounded</button>
 		</div>
 	)
 }
