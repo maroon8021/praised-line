@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Comment from './Comment'
+import CommentList from './CommentList'
+import CommentInput from './CommentInput';
 
 const Feed = (contents) => {
 
@@ -32,8 +33,9 @@ const Feed = (contents) => {
 				</div>
 				<div className="comment-area">
 				  {contents.comments.map(comment => (
-						<Comment key={comment.id} {...comment} />
+						<CommentList key={comment.id} {...comment} />
 					))}
+					<CommentInput />
 				</div>
 			</div>
 		</div>

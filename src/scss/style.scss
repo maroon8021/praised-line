@@ -34,9 +34,18 @@
 .communication-buttons{
 	display: flex;
 	border-top: 1px solid #dedede;
-	padding-top: 8px;
+	padding: 8px 0;
 	& div, a{
 		width: 100%;
+	}
+}
+
+.comment-area{
+	border-top: #dedede solid 1px;
+	margin: 0 -20px;
+	&-inner{
+		display: flex;
+		padding: 20px;
 	}
 }
 
