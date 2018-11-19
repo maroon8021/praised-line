@@ -40,14 +40,28 @@
 	}
 }
 
-.comment-area{
-	border-top: #dedede solid 1px;
-	margin: 0 -20px;
-	&-inner{
+.comment{
+	&-area{
+		border-top: #dedede solid 1px;
+		margin: 0 -20px;
+	}
+	&-list{
 		display: flex;
 		padding: 20px;
 	}
+	&-input{
+		padding: 20px;
+		& input {
+			width: 80%;
+		}
+		& .button{
+			margin-left: 8px;
+		}
+	}
 }
+
+
+
 
 /*Added below temporary*/
 
