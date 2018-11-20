@@ -31,6 +31,16 @@ export const addFeed = content => ({
   comments: content.comments
 })
 
+/**
+ * How to get id?
+ * @param {*} content 
+ */
+export const addComment = content => ({
+	type: 'ADD_COMMENT',
+	id: content.id,
+  text: content.text
+})
+
 /*
 どのタイプで、何を渡すのか
 */
