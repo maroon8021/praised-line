@@ -35,7 +35,7 @@ const Feed = (contents) => {
 				  {contents.comments.map(comment => (
 						<CommentList key={comment.id} {...comment} />
 					))}
-					<CommentInput />
+					<CommentInput userId={contents.id} />
 				</div>
 			</div>
 		</div>
