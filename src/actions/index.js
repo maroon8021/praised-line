@@ -35,9 +35,9 @@ export const addFeed = content => ({
  * How to get id?
  * @param {*} content 
  */
-export const addComment = content => ({
+export const addComment = (id, content) => ({
 	type: 'ADD_COMMENT',
-	id: content.id,
+  id: content.id,
   text: content.text
 })
 
