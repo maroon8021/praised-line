@@ -7,12 +7,13 @@ const mapStateToProps = state => ({
   feeds: state.feeds
 })
 
-/*
+
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  addComment: (id, content) => dispatch(addComment(id, content))
 })
-*/
+
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(FeedContainer)
