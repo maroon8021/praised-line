@@ -39,3 +39,14 @@ CommentInput.propTypes = {
 */
 
 export default connect(CommentInput)
+
+
+/*
+dispatchを受けとるには App.js 内に囲まれていなければいけない 
+　-> そこにcommentを配置してしまうとelementの場所が変になる
+Feed内にやった場合はどうやってdispatchを渡すか
+　-> propで渡してやるか
+commentは別のstateで持つべきではないか
+　-> ?
+
+*/
