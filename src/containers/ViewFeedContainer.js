@@ -4,7 +4,8 @@ import FeedContainer from '../components/FeedContainer'
 
 // Common one?
 const mapStateToProps = state => ({
-  feeds: state.feeds
+  feeds: state.feeds,
+  comments : state.comments
 })
 
 
