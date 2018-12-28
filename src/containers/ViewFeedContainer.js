@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import FeedContainer from '../components/FeedContainer'
-
+import { addComment } from '../actions/index'
 
 // Common one?
 const mapStateToProps = state => ({

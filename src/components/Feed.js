@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import CommentList from './CommentList'
 import CommentInput from './CommentInput';
 
-const Feed = (contents) => {
+const Feed = ({contents, comments, addComment}) => {
 
 	return (
 		<div className="card article">
@@ -31,12 +31,7 @@ const Feed = (contents) => {
 					<a className="button is-white">Comment</a>
 					</div>
 				</div>
-				<div className="comment-area">
-				  {contents.comments.map(comment => (
-						<CommentList key={comment.id} {...comment} />
-					))}
-					<CommentInput userId={contents.id} />
-				</div>
+				
 			</div>
 		</div>
 	)
@@ -48,7 +43,18 @@ Feed.propTypes = {
 	userName: PropTypes.string.isRequired,
 	date: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
-	comments: PropTypes.array
+	comments: PropTypes.array,
 }
 
 export default Feed
+
+
+/*
+<div className="comment-area">
+				  {contents.comments.map(comment => (
+						<CommentList key={comment.id} {...comment} />
+					))}
+					<CommentInput userId={contents.id} />
+				</div>
+
+ */

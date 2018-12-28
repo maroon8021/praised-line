@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Feed from './Feed';
 
-const FeedContainer = ({ feeds }) => {
+const FeedContainer = ({ feeds, comments, addComment }) => { // might be came here as Object
 
   return (
     <div className="container">
       <section className="articles">
         <div className="column is-8 is-offset-2">
 		  {feeds.map(feed => (
-				<Feed key={feed.id} {...feed} />
+				<Feed key={feed.id} {...feed} {...comments}  addComment={addComment}/>
         //<Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
       ))}
         </div>
