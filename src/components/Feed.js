@@ -3,8 +3,14 @@ import PropTypes from 'prop-types'
 import CommentList from './CommentList'
 import CommentInput from './CommentInput';
 
-const Feed = ({contents, comments, addComment}) => {
-
+const Feed = ({ contents, comments, addComment }) => {
+	let commentList = null;
+	if (comments) {
+		commentList = comments.map(comment => (
+			<CommentList key={comment.id} {...comment} />
+		))
+	}
+	
 	return (
 		<div className="card article">
 			<div className="card-content">
@@ -24,25 +30,29 @@ const Feed = ({contents, comments, addComment}) => {
 					<h3 className="has-text-centered">hoge</h3>
 				</div>
 				<div className="communication-buttons">
-				  <div className="like-button">
-					<a className="button is-white">Like</a>
+					<div className="like-button">
+						<a className="button is-white">Like</a>
 					</div>
 					<div className="comment-button">
-					<a className="button is-white">Comment</a>
+						<a className="button is-white">Comment</a>
 					</div>
 				</div>
 				
+				<div className="comment-area">
+				{commentList}
+				<CommentInput addComment={addComment} contents={contents} />
+				</div>
 			</div>
 		</div>
 	)
 }
 
 Feed.propTypes = {
-	id: PropTypes.number.isRequired, //can be fixed to string
-	title: PropTypes.string.isRequired,
-	userName: PropTypes.string.isRequired,
-	date: PropTypes.string.isRequired,
-	text: PropTypes.string.isRequired,
+	id: PropTypes.number, //can be fixed to string
+	title: PropTypes.string,
+	userName: PropTypes.string,
+	date: PropTypes.string,
+	text: PropTypes.string,
 	comments: PropTypes.array,
 }
 

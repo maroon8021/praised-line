@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addComment } from '../actions';
 
-const CommentInput = ({dispatch, contents}) => {
+const CommentInput = ({addComment, contents}) => {
 
 	let input
 
@@ -12,10 +12,7 @@ const CommentInput = ({dispatch, contents}) => {
 		if (!input.value.trim()) {
 			return
 		}
-		dispatch(addComment({
-			id : contents.id,
-			text : input.value
-		}))
+		addComment(contents.id, input.value)
 		input.value = ''
 	}
 
@@ -38,7 +35,7 @@ CommentInput.propTypes = {
 }
 */
 
-export default connect(CommentInput)
+export default CommentInput
 
 
 /*

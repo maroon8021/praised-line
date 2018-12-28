@@ -37,7 +37,7 @@ export const addFeed = content => ({
  */
 export const addComment = (id, content) => ({
 	type: 'ADD_COMMENT',
-  id: content.id,
+  id,
   text: content.text
 })
 

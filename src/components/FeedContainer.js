@@ -9,7 +9,7 @@ const FeedContainer = ({ feeds, comments, addComment }) => { // might be came he
       <section className="articles">
         <div className="column is-8 is-offset-2">
 		  {feeds.map(feed => (
-				<Feed key={feed.id} {...feed} {...comments}  addComment={addComment}/>
+				<Feed key={feed.id} contents={feed} comments={comments}  addComment={addComment}/>
         //<Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
       ))}
         </div>

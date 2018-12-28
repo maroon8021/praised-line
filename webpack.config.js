@@ -67,6 +67,7 @@ module.exports = {
 		//publicPath : '/js/',
 		hot: true,
 		inline: true,
-		port: 9000
+		port: 50002,
+		disableHostCheck: true
 	}
 };
