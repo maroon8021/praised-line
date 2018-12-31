@@ -1,11 +1,17 @@
+import { commentId } from '../temp';
+
+let commentNum = 0;
+
 const comments = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_COMMENT':
+		case 'ADD_COMMENT':
+		commentNum++
       return [
         ...state,
         {
-					id: action.id, // can be duplicated, need to fix
-          text: action.text
+					id: commentNum, // can be duplicated, need to fix
+					text: action.text,
+					feedId: action.id
         }
       ]
     default:

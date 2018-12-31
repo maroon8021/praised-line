@@ -33,13 +33,15 @@ export const addFeed = content => ({
 
 /**
  * How to get id?
- * @param {*} content 
+ * @param {*} content
  */
-export const addComment = (id, content) => ({
+export const addComment = (id, content) => {
+	console.log('addComment')
+	return {
 	type: 'ADD_COMMENT',
   id,
-  text: content.text
-})
+  text: content
+}}
 
 /*
 どのタイプで、何を渡すのか

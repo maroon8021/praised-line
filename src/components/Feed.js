@@ -5,12 +5,16 @@ import CommentInput from './CommentInput';
 
 const Feed = ({ contents, comments, addComment }) => {
 	let commentList = null;
+	console.log(contents)
+	console.log(comments)
 	if (comments) {
-		commentList = comments.map(comment => (
-			<CommentList key={comment.id} {...comment} />
-		))
+		commentList = comments.map(comment => {
+			if(contents.id === comment.feedId){
+				return <CommentList key={comment.id} {...comment} />
+			}
+		})
 	}
-	
+
 	return (
 		<div className="card article">
 			<div className="card-content">
@@ -37,7 +41,7 @@ const Feed = ({ contents, comments, addComment }) => {
 						<a className="button is-white">Comment</a>
 					</div>
 				</div>
-				
+
 				<div className="comment-area">
 				{commentList}
 				<CommentInput addComment={addComment} contents={contents} />
