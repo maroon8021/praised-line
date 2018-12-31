@@ -14,3 +14,5 @@ export const tempFeedData = content => ({
 		}
 	]
 })
+
+export default commentId;
